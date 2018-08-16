@@ -31,4 +31,4 @@ RUN /usr/bin/init.sh
 
 #ENTRYPOINT nginx -c /etc/nginx/nginx.conf
 #CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
-CMD php-fpm7 -D; nginx -g "daemon off;" -c /etc/nginx/nginx.conf
+CMD php-fpm7 -D; nginx -g "daemon off;" -c "/etc/nginx/nginx.conf"
