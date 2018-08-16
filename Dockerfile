@@ -12,7 +12,7 @@ RUN apk add --no-cache bash
 RUN apk add --no-cache curl nginx git mysql 
 
 # PHP modules
-RUN apk add --no-cache php7 php7-json php7-xml php7-mbstring php7-fileinfo php7-opcache php7-fpm php7-gd phpmyadmin
+RUN apk add --no-cache php7 php7-json php7-xml php7-mbstring php7-fileinfo php7-opcache php7-fpm php7-gd php7-pdo php7-iconv php7-dom phpmyadmin 
 
 # Initialize
 #RUN git clone https://git.tt-rss.org/fox/tt-rss.git /var/www/tt-rss
