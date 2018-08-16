@@ -11,7 +11,7 @@ echo "define('_SKIP_SELF_URL_PATH_CHECKS', true);" | tee /var/www/tt-rss/config.
 #echo "${NGINX_fastcgi_conf:1:-1}" | tee /etc/nginx/fastcgi.conf &> /dev/null
 
 ln -s /usr/share/webapps/phpmyadmin /var/www/tt-rss/
-ln -s /etc/phpmyadmin/config.inc.php /var/www/tt-r	ss/phpmyadmin-conf.php
+ln -s /etc/phpmyadmin/config.inc.php /var/www/tt-rss/phpmyadmin-conf.php
 
 # Initialize NGINX
 mkdir -p /run/nginx
