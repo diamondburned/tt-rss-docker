@@ -16,9 +16,6 @@ RUN apk add --no-cache php7 php7-json php7-xml php7-mbstring php7-fileinfo php7-
 
 # Initialize
 #RUN git clone https://git.tt-rss.org/fox/tt-rss.git /var/www/tt-rss
-#   v fake a dir
-RUN mkdir -p /var/www/tt-rss
-VOLUME [ "/var/log/mysql", "/var/log/nginx", "/var/www/tt-rss", "/etc/nginx" ]
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose (open) ports
@@ -28,6 +25,8 @@ EXPOSE 80
 COPY init.sh /usr/bin/
 RUN chmod +x /usr/bin/init.sh
 RUN /usr/bin/init.sh
+
+VOLUME [ "/var/log/mysql", "/var/log/nginx", "/var/www/tt-rss", "/etc/nginx" ]
 
 #ENTRYPOINT nginx -c /etc/nginx/nginx.conf
 #CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]

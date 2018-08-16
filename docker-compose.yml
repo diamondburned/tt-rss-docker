@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    ttrss:
+        container_name: ttrss
+        image: local/ttrss
+        build:
+            context: .
+        restart: always
+        # volumes:
+        #   - /mnt/storage/docker/volumes/data-gitea-server:/data
+        ports:
+          - "8000:80"
