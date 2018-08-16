@@ -16,6 +16,7 @@ RUN apk add --no-cache php7 php7-json php7-xml php7-plsql php7-pdo_pgsql php7-mb
 
 # Initialize
 #RUN git clone https://git.tt-rss.org/fox/tt-rss.git /var/www/tt-rss
+RUN adduser -D -g 'www-data' www-data
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose (open) ports
@@ -28,4 +29,4 @@ RUN /usr/bin/init.sh
 
 #ENTRYPOINT nginx -c /etc/nginx/nginx.conf
 #CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
-CMD php-fpm7 -D; nginx -g "daemon off;" -c "/etc/nginx/nginx.conf"
+CMD php /var/www/tt-rss/update_daemon2.php & ; php-fpm7 -D; nginx -g "daemon off;" -c "/etc/nginx/nginx.conf"
