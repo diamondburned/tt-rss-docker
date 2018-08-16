@@ -7,7 +7,7 @@ services:
         build:
             context: .
         restart: always
-        # volumes:
-        #   - /mnt/storage/docker/volumes/data-gitea-server:/data
+        volumes:
+            - /mnt/storage/docker/volumes/ttrss/config.php:/var/www/tt-rss/config.php
         ports:
-          - "8000:80"
+            - "8000:80"

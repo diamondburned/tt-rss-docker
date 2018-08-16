@@ -26,8 +26,6 @@ COPY init.sh /usr/bin/
 RUN chmod +x /usr/bin/init.sh
 RUN /usr/bin/init.sh
 
-VOLUME [ "/var/www/tt-rss/config.php" ]
-
 #ENTRYPOINT nginx -c /etc/nginx/nginx.conf
 #CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
 CMD php-fpm7 -D; nginx -g "daemon off;" -c "/etc/nginx/nginx.conf"
