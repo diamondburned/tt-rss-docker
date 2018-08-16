@@ -26,7 +26,7 @@ COPY init.sh /usr/bin/
 RUN chmod +x /usr/bin/init.sh
 RUN /usr/bin/init.sh
 
-VOLUME [ "/var/log/mysql", "/var/log/nginx", "/var/www/tt-rss", "/etc/nginx" ]
+#VOLUME [ "/var/log/mysql", "/var/log/nginx", "/var/www/tt-rss", "/etc/nginx" ]
 
 #ENTRYPOINT nginx -c /etc/nginx/nginx.conf
 #CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
